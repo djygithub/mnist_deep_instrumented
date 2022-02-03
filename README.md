@@ -86,3 +86,117 @@ train iterations/second 121.037
 inference images/second 13503.5
 
 ```
+Environment
+```
+root@10c34477cc47:/workspace/github/djytf# pip list
+Package                Version  
+---------------------- ---------
+absl-py                0.8.1    
+astor                  0.8.0    
+attrs                  19.3.0   
+audioread              2.1.8    
+backcall               0.1.0    
+bleach                 3.1.0    
+cloudpickle            1.2.2    
+cupy                   6.5.0    
+cycler                 0.10.0   
+Cython                 0.29.14  
+decorator              4.4.1    
+defusedxml             0.6.0    
+entrypoints            0.3      
+fastrlock              0.4      
+future                 0.17.1   
+gast                   0.2.2    
+google-pasta           0.1.8    
+graphsurgeon           0.4.1    
+grpcio                 1.25.0   
+h5py                   2.9.0    
+horovod                0.18.2   
+importlib-metadata     0.23     
+ipykernel              5.1.3    
+ipython                7.9.0    
+ipython-genutils       0.2.0    
+jedi                   0.15.1   
+Jinja2                 2.10.3   
+joblib                 0.13.2   
+json5                  0.8.5    
+jsonschema             3.1.1    
+jupyter-client         5.3.4    
+jupyter-core           4.6.1    
+jupyter-tensorboard    0.1.10   
+jupyterlab             1.0.2    
+jupyterlab-server      1.0.0    
+jupytext               1.2.4    
+Keras-Applications     1.0.8    
+Keras-Preprocessing    1.0.5    
+kiwisolver             1.1.0    
+librosa                0.6.3    
+llvmlite               0.29.0   
+Markdown               3.1.1    
+MarkupSafe             1.1.1    
+matplotlib             3.1.1    
+mistune                0.8.4    
+mock                   3.0.5    
+more-itertools         7.2.0    
+mpi4py                 3.0.2    
+nbconvert              5.6.1    
+nbformat               4.4.0    
+nltk                   3.2.5    
+notebook               5.7.8    
+numba                  0.44.1   
+numpy                  1.17.4   
+nvidia-dali            0.15.0   
+nvidia-dali-tf-plugin  0.15.0   
+opt-einsum             3.1.0    
+pandas                 0.23.0   
+pandocfilters          1.4.2    
+parso                  0.5.1    
+pexpect                4.7.0    
+pickleshare            0.7.5    
+Pillow                 5.4.1    
+pip                    19.3.1   
+portpicker             1.3.1    
+prometheus-client      0.7.1    
+prompt-toolkit         2.0.10   
+protobuf               3.10.0   
+psutil                 5.6.3    
+ptyprocess             0.6.0    
+pycocotools            2.0.0    
+Pygments               2.4.2    
+pyparsing              2.4.5    
+pyrsistent             0.15.5   
+python-dateutil        2.8.1    
+python-speech-features 0.6      
+pytz                   2019.3   
+PyYAML                 5.1.2    
+pyzmq                  18.1.0   
+resampy                0.2.1    
+sacrebleu              1.3.6    
+scikit-learn           0.21.3   
+scipy                  1.3.1    
+Send2Trash             1.5.0    
+sentencepiece          0.1.82   
+setuptools             41.6.0   
+six                    1.12.0   
+tensorboard            1.15.0   
+tensorflow-estimator   1.15.1   
+tensorflow-gpu         1.15.0+nv
+tensorrt               6.0.1.8  
+termcolor              1.1.0    
+terminado              0.8.2    
+testpath               0.4.4    
+tornado                6.0.3    
+tqdm                   4.38.0   
+traitlets              4.3.3    
+typing                 3.7.4.1  
+uff                    0.6.5    
+wcwidth                0.1.7    
+webencodings           0.5.1    
+Werkzeug               0.16.0   
+wheel                  0.33.6   
+wrapt                  1.11.2   
+zipp                   0.6.0    
+WARNING: You are using pip version 19.3.1; however, version 21.3.1 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+root@10c34477cc47:/workspace/github/djytf# 
+```
