@@ -35,3 +35,89 @@ NOTE: The SHMEM allocation limit is set to the default of 64MB.  This may be
 
 root@10c34477cc47:/workspace# 
 ```
+Test script
+```
+root@b468a8dd91b3:/workspace/nvidia-examples/cnn# mpiexec --allow-run-as-root --bind-to socket -np 1 python alexnet.py --batch_size=4
+--------------------------------------------------------------------------
+WARNING: Open MPI tried to bind a process but failed.  This is a
+warning only; your job will continue, though performance may
+be degraded.
+
+  Local host:        b468a8dd91b3
+  Application name:  /usr/bin/python
+  Error message:     failed to bind memory
+  Location:          rtc_hwloc.c:445
+
+--------------------------------------------------------------------------
+2022-02-02 08:40:10.300438: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.2
+WARNING:tensorflow:From /workspace/nvidia-examples/cnn/nvutils/optimizers.py:22: The name tf.train.Optimizer is deprecated. Please use tf.compat.v1.train.Optimizer instead.
+
+WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/horovod-0.18.2-py3.6-linux-x86_64.egg/horovod/tensorflow/__init__.py:117: The name tf.global_variables is deprecated. Please use tf.compat.v1.global_variables instead.
+
+WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/horovod-0.18.2-py3.6-linux-x86_64.egg/horovod/tensorflow/__init__.py:143: The name tf.get_default_graph is deprecated. Please use tf.compat.v1.get_default_graph instead.
+
+WARNING:tensorflow:From /workspace/nvidia-examples/cnn/nvutils/runner.py:49: The name tf.train.SessionRunHook is deprecated. Please use tf.estimator.SessionRunHook instead.
+
+PY 3.6.8 (default, Oct  7 2019, 12:59:55) 
+[GCC 8.3.0]
+TF 1.15.0
+Script arguments:
+  --batch_size 4
+  --num_iter 91
+  --iter_unit epoch
+  --display_every 10
+  --precision fp16
+  --use_xla False
+  --predict False
+.
+.
+.
+root@10c34477cc47:/workspace/github/djytf# python3 mnist_deep.py 
+2022-02-02 16:33:24.972224: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.2
+WARNING:tensorflow:From mnist_deep.py:191: The name tf.app.run is deprecated. Please use tf.compat.v1.app.run instead.
+
+WARNING:tensorflow:From mnist_deep.py:135: read_data_sets (from tensorflow.contrib.learn.python.learn.datasets.mnist) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use alternatives such as official/mnist/dataset.py from tensorflow/models.
+.
+.
+.
+2022-02-02 16:33:27.531204: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 0 with properties: 
+name: GeForce GTX 1050 major: 6 minor: 1 memoryClockRate(GHz): 1.455
+pciBusID: 0000:01:00.0
+.
+.
+.
+step 0, training accuracy 0.08
+step 100, training accuracy 0.86
+step 200, training accuracy 0.94
+step 300, training accuracy 0.96
+step 400, training accuracy 0.94
+step 500, training accuracy 0.98
+step 600, training accuracy 0.92
+step 700, training accuracy 0.98
+step 800, training accuracy 0.94
+step 900, training accuracy 0.9
+step 1000, training accuracy 0.98
+step 1100, training accuracy 0.94
+step 1200, training accuracy 0.96
+step 1300, training accuracy 0.96
+step 1400, training accuracy 0.98
+step 1500, training accuracy 0.94
+step 1600, training accuracy 0.98
+step 1700, training accuracy 0.98
+step 1800, training accuracy 0.94
+step 1900, training accuracy 0.94
+2022-02-02 16:33:43.871927: W tensorflow/core/common_runtime/bfc_allocator.cc:239] Allocator (GPU_0_bfc) ran out of memory trying to allocate 16.00MiB with freed_by_count=0. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+2022-02-02 16:33:43.871967: W tensorflow/core/common_runtime/bfc_allocator.cc:239] Allocator (GPU_0_bfc) ran out of memory trying to allocate 539.38MiB with freed_by_count=0. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+2022-02-02 16:33:43.871987: W tensorflow/core/common_runtime/bfc_allocator.cc:239] Allocator (GPU_0_bfc) ran out of memory trying to allocate 1.83GiB with freed_by_count=0. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+2022-02-02 16:33:43.872006: W tensorflow/core/common_runtime/bfc_allocator.cc:239] Allocator (GPU_0_bfc) ran out of memory trying to allocate 974.90MiB with freed_by_count=0. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+2022-02-02 16:33:43.872019: W tensorflow/core/common_runtime/bfc_allocator.cc:239] Allocator (GPU_0_bfc) ran out of memory trying to allocate 2.34GiB with freed_by_count=0. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+2022-02-02 16:33:44.208351: W tensorflow/core/common_runtime/bfc_allocator.cc:239] Allocator (GPU_0_bfc) ran out of memory trying to allocate 3.65GiB with freed_by_count=0. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+2022-02-02 16:33:44.208391: W tensorflow/core/common_runtime/bfc_allocator.cc:239] Allocator (GPU_0_bfc) ran out of memory trying to allocate 2.75GiB with freed_by_count=0. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+2022-02-02 16:33:44.208410: W tensorflow/core/common_runtime/bfc_allocator.cc:239] Allocator (GPU_0_bfc) ran out of memory trying to allocate 1.71GiB with freed_by_count=0. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+inference accuracy 0.972714
+train iterations/second 121.037
+inference images/second 13503.5
+
+```
