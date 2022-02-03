@@ -1,6 +1,6 @@
 # mnist_deep_instrumented
-Classic mnist_deep.py with training iterations per second and inference images per second
-One way to test is with an Nvidia Container
+Classic mnist_deep.py with training iterations per second and inference images per second.
+One way to test is with an Nvidia Container.
 ```
 david@i77700:~/Desktop$ docker images
 REPOSITORY                  TAG                                 IMAGE ID       CREATED          SIZE
