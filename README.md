@@ -1,4 +1,5 @@
 # mnist_deep_instrumented
+![results](http://davidjyoung.com/cmg/mnistdeep.JPG)
 Classic mnist_deep.py with training iterations per second and inference images per second.
 One way to test is with an Nvidia Container.
 ```
