@@ -37,41 +37,6 @@ root@10c34477cc47:/workspace#
 ```
 Test script
 ```
-root@b468a8dd91b3:/workspace/nvidia-examples/cnn# mpiexec --allow-run-as-root --bind-to socket -np 1 python alexnet.py --batch_size=4
---------------------------------------------------------------------------
-WARNING: Open MPI tried to bind a process but failed.  This is a
-warning only; your job will continue, though performance may
-be degraded.
-
-  Local host:        b468a8dd91b3
-  Application name:  /usr/bin/python
-  Error message:     failed to bind memory
-  Location:          rtc_hwloc.c:445
-
---------------------------------------------------------------------------
-2022-02-02 08:40:10.300438: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.2
-WARNING:tensorflow:From /workspace/nvidia-examples/cnn/nvutils/optimizers.py:22: The name tf.train.Optimizer is deprecated. Please use tf.compat.v1.train.Optimizer instead.
-
-WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/horovod-0.18.2-py3.6-linux-x86_64.egg/horovod/tensorflow/__init__.py:117: The name tf.global_variables is deprecated. Please use tf.compat.v1.global_variables instead.
-
-WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/horovod-0.18.2-py3.6-linux-x86_64.egg/horovod/tensorflow/__init__.py:143: The name tf.get_default_graph is deprecated. Please use tf.compat.v1.get_default_graph instead.
-
-WARNING:tensorflow:From /workspace/nvidia-examples/cnn/nvutils/runner.py:49: The name tf.train.SessionRunHook is deprecated. Please use tf.estimator.SessionRunHook instead.
-
-PY 3.6.8 (default, Oct  7 2019, 12:59:55) 
-[GCC 8.3.0]
-TF 1.15.0
-Script arguments:
-  --batch_size 4
-  --num_iter 91
-  --iter_unit epoch
-  --display_every 10
-  --precision fp16
-  --use_xla False
-  --predict False
-.
-.
-.
 root@10c34477cc47:/workspace/github/djytf# python3 mnist_deep.py 
 2022-02-02 16:33:24.972224: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.2
 WARNING:tensorflow:From mnist_deep.py:191: The name tf.app.run is deprecated. Please use tf.compat.v1.app.run instead.
