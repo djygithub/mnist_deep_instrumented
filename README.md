@@ -88,6 +88,7 @@ train iterations/second 121.037
 inference images/second 13503.5
 
 ```
+![results](http://davidjyoung.com/cmg/mnist_deep.png)
 Environment
 ```
 root@10c34477cc47:/workspace/github/djytf# pip list
