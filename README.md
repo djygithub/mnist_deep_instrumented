@@ -202,3 +202,5 @@ WARNING: You are using pip version 19.3.1; however, version 21.3.1 is available.
 You should consider upgrading via the 'pip install --upgrade pip' command.
 root@10c34477cc47:/workspace/github/djytf# 
 ```
+## main.py Windows 10 Pytorch V 1.0/1.1
+Please see extensive documentation plus video at https://github.com/pytorch/pytorch/issues/20969
