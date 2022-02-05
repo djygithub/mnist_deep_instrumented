@@ -1,7 +1,7 @@
 # mnist_deep_instrumented
-![results](http://davidjyoung.com/cmg/mnistdeep2.JPG)
-Classic mnist_deep.py with training iterations per second and inference images per second.Tensorflow (mnist_deep.py) and Pytorch (main.py) versions included.
+Classic mnist_deep.py with training iterations per second and inference images per second.  Tensorflow (mnist_deep.py) and Pytorch (main.py) versions included.
 ## mnist_deep.py Ubuntu Tensorflow v 1.15
+![results](http://davidjyoung.com/cmg/mnistdeep2.JPG)
 One way to test is with an Nvidia Container.
 ```
 david@i77700:~/Desktop$ docker images
