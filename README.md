@@ -1,4 +1,4 @@
-# mnist_deep_instrumented
+# mnist_deep_instrumented http://davidjyoung.com/cmg/nvidiagpuperf.pdf
 Classic mnist_deep.py with training iterations per second and inference images per second.  Tensorflow (mnist_deep.py) and Pytorch (main.py) versions included.
 ## mnist_deep.py Ubuntu Tensorflow v 1.15
 ![results](http://davidjyoung.com/cmg/mnistdeep2.JPG)
