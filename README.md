@@ -203,7 +203,29 @@ You should consider upgrading via the 'pip install --upgrade pip' command.
 root@10c34477cc47:/workspace/github/djytf# 
 ```
 ## rocm mnist_deep.py Ubuntu 20.04 Rocm Container Tensorflow v 1.15
-```
+```login as: david
+     +--------------------------------------------------------------------+
+     ¦                        • MobaXterm 11.1 •                          ¦
+     ¦            (SSH client, X-server and networking tools)             ¦
+     ¦                                                                    ¦
+     ¦ ? SSH session to david@10.207.55.113                               ¦
+     ¦   • SSH compression : ?                                            ¦
+     ¦   • SSH-browser     : ?                                            ¦
+     ¦   • X11-forwarding  : ?  (remote display is forwarded through SSH) ¦
+     ¦   • DISPLAY         : ?  (automatically set on remote server)      ¦
+     ¦                                                                    ¦
+     ¦ ? For more info, ctrl+click on help or visit our website           ¦
+     +--------------------------------------------------------------------+
+
+Welcome to Ubuntu 20.04.3 LTS (GNU/Linux 5.4.0-96-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Tue 08 Feb 2022 04:34:47 PM UTC
+.
+.
 david@ryzen:~$ alias drun='sudo docker run -it --network=host --device=/dev/kfd --device=/dev/dri --ipc=host --shm-size 16G --group-add video --cap-add=SYS_PTRACE --security-opt seccomp=unconfined -v $HOME/dockerx:/dockerx'
 david@ryzen:~$ drun djydockerhub/lammpsiccavx2:20200521
 [sudo] password for david:
