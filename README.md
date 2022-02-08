@@ -1,6 +1,6 @@
 # mnist_deep_instrumented http://davidjyoung.com/cmg/nvidiagpuperf.pdf
 Classic mnist_deep.py with training iterations per second and inference images per second.  Tensorflow (mnist_deep.py) and Pytorch (main.py) versions included.
-## mnist_deep.py Ubuntu Tensorflow v 1.15
+## cuda mnist_deep.py Ubuntu 20.04 Nvidia Container Tensorflow v 1.15
 One way to test is with an Nvidia Container.
 ```
 david@i77700:~/Desktop$ docker images
@@ -201,6 +201,19 @@ zipp                   0.6.0
 WARNING: You are using pip version 19.3.1; however, version 21.3.1 is available.
 You should consider upgrading via the 'pip install --upgrade pip' command.
 root@10c34477cc47:/workspace/github/djytf# 
+```
+## rocm mnist_deep.py Ubuntu 20.04 Rocm Container Tensorflow v 1.15
+```
+david@ryzen:~$ alias drun='sudo docker run -it --network=host --device=/dev/kfd --device=/dev/dri --ipc=host --shm-size 16G --group-add video --cap-add=SYS_PTRACE --security-opt seccomp=unconfined -v $HOME/dockerx:/dockerx'
+david@ryzen:~$ drun djydockerhub/lammpsiccavx2:20200521
+[sudo] password for david:
+root@ryzen:/root# python3
+Python 3.5.2 (default, Oct  8 2019, 13:06:37)
+[GCC 5.4.0 20160609] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import tensorflow as tf
+>>> exit()
+root@ryzen:/root#
 ```
 ## main.py Windows 10 Pytorch V 1.0/1.1
 Please see extensive documentation plus video at https://github.com/pytorch/pytorch/issues/20969
