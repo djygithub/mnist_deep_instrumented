@@ -242,7 +242,151 @@ Instructions for updating:
 Please use alternatives such as official/mnist/dataset.py from tensorflow/models.
 W0208 16:37:13.797948 140165174830848 deprecation.py:323] From mnist_deep.py:135: read_data_sets (from tensorflow.contrib.learn.python.                             learn.datasets.mnist) is deprecated and will be removed in a future version.
 Instructions for updating:
-
+.
+.
+2022-02-08 16:37:14.423327: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1650] Found device 0 with properties:
+name: Fiji [Radeon R9 FURY / NANO Series]
+AMDGPU ISA: gfx803
+memoryClockRate (GHz) 1
+pciBusID 0000:09:00.0
+.
+.
+step 0, training accuracy 0.1
+step 100, training accuracy 0.8
+step 200, training accuracy 0.88
+step 300, training accuracy 0.86
+step 400, training accuracy 0.96
+step 500, training accuracy 0.98
+step 600, training accuracy 0.98
+step 700, training accuracy 0.98
+step 800, training accuracy 0.98
+step 900, training accuracy 0.92
+step 1000, training accuracy 0.98
+step 1100, training accuracy 0.98
+step 1200, training accuracy 0.94
+step 1300, training accuracy 0.98
+step 1400, training accuracy 1
+step 1500, training accuracy 0.98
+step 1600, training accuracy 1
+step 1700, training accuracy 0.96
+step 1800, training accuracy 0.98
+step 1900, training accuracy 0.98
+inference accuracy 0.971857
+train iterations/second 60.5294
+inference images/second 28680.6
+root@ryzen:/dockerx/mnist_deep_instrumented# 
+```
+Environment
+```
+root@ryzen:/dockerx/mnist_deep_instrumented# pip list
+Package              Version
+-------------------- ----------------------
+absl-py              0.9.0
+astor                0.8.1
+attrs                19.3.0
+backcall             0.1.0
+bleach               3.1.0
+chardet              2.3.0
+decorator            4.4.1
+defusedxml           0.6.0
+entrypoints          0.3
+enum34               1.1.6
+gast                 0.2.2
+google-pasta         0.1.8
+grpcio               1.26.0
+h5py                 2.10.0
+importlib-metadata   1.3.0
+ipykernel            5.1.3
+ipython              7.9.0
+ipython-genutils     0.2.0
+ipywidgets           7.5.1
+jedi                 0.15.1
+Jinja2               2.10.3
+jsonschema           3.2.0
+jupyter              1.0.0
+jupyter-client       5.3.4
+jupyter-console      6.0.0
+jupyter-core         4.6.1
+Keras-Applications   1.0.8
+Keras-Preprocessing  1.1.0
+Markdown             3.1.1
+MarkupSafe           1.1.1
+mistune              0.8.4
+mock                 3.0.5
+more-itertools       8.0.2
+nbconvert            5.6.1
+nbformat             4.4.0
+notebook             6.0.2
+numpy                1.17.4
+opt-einsum           3.1.0
+pandocfilters        1.4.2
+parso                0.5.2
+pexpect              4.7.0
+pickleshare          0.7.5
+pip                  19.3.1
+prometheus-client    0.7.1
+prompt-toolkit       2.0.10
+protobuf             3.11.1
+ptyprocess           0.6.0
+pycurl               7.43.0
+Pygments             2.5.2
+pygobject            3.20.0
+pyrsistent           0.15.6
+python-apt           1.1.0b1+ubuntu0.16.4.5
+python-dateutil      2.8.1
+pyzmq                18.1.1
+qtconsole            4.6.0
+requests             2.9.1
+Send2Trash           1.5.0
+setuptools           42.0.2
+six                  1.13.0
+ssh-import-id        5.5
+tensorboard          1.15.0
+tensorflow           1.15.0
+tensorflow-estimator 1.15.1
+termcolor            1.1.0
+terminado            0.8.3
+testpath             0.4.4
+tornado              6.0.3
+traitlets            4.3.3
+unattended-upgrades  0.1
+urllib3              1.13.1
+wcwidth              0.1.7
+webencodings         0.5.1
+Werkzeug             0.16.0
+wheel                0.29.0
+widgetsnbextension   3.5.1
+wrapt                1.11.2
+zipp                 0.6.0
+WARNING: You are using pip version 19.3.1; however, version 20.3.4 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+root@ryzen:/dockerx/mnist_deep_instrumented# lscpu
+Architecture:          x86_64
+CPU op-mode(s):        32-bit, 64-bit
+Byte Order:            Little Endian
+CPU(s):                16
+On-line CPU(s) list:   0-15
+Thread(s) per core:    2
+Core(s) per socket:    8
+Socket(s):             1
+NUMA node(s):          1
+Vendor ID:             AuthenticAMD
+CPU family:            23
+Model:                 1
+Model name:            AMD Ryzen 7 1700 Eight-Core Processor
+Stepping:              1
+CPU MHz:               1374.465
+CPU max MHz:           3000.0000
+CPU min MHz:           1550.0000
+BogoMIPS:              5988.44
+Virtualization:        AMD-V
+L1d cache:             32K
+L1i cache:             64K
+L2 cache:              512K
+L3 cache:              8192K
+NUMA node0 CPU(s):     0-15
+Flags:                 fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx                              mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl nonstop_tsc cpuid extd_apicid aperfmperf pni pclmulqdq monitor ssse3 fma c                             x16 sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch                              osvw skinit wdt tce topoext perfctr_core perfctr_nb bpext perfctr_llc mwaitx cpb hw_pstate sme ssbd sev vmmcall fsgsbase bmi1 avx2 smep                              bmi2 rdseed adx smap clflushopt sha_ni xsaveopt xsavec xgetbv1 xsaves clzero irperf xsaveerptr arat npt lbrv svm_lock nrip_save tsc_sc                             ale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold avic v_vmsave_vmload vgif overflow_recov succor smca
+root@ryzen:/dockerx/mnist_deep_instrumented# python3 mnist_deep.py
 ```
 ## main.py Windows 10 Pytorch V 1.0/1.1
 Please see extensive documentation plus video at https://github.com/pytorch/pytorch/issues/20969
