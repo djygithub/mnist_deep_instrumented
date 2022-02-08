@@ -215,5 +215,34 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> exit()
 root@ryzen:/root#
 ```
+Test Script
+```
+root@ryzen:/root# cd /
+root@ryzen:/# cd dockerx/
+root@ryzen:/dockerx# ll
+total 12
+drwxr-xr-x 3 root root 4096 Feb  8 16:27 ./
+drwxr-xr-x 1 root root 4096 Feb  8 16:35 ../
+drwxr-xr-x 3 root root 4096 Feb  8 16:27 mnist_deep_instrumented/
+root@ryzen:/dockerx# cd mnist_deep_instrumented/
+root@ryzen:/dockerx/mnist_deep_instrumented# ll
+total 48
+drwxr-xr-x 3 root root  4096 Feb  8 16:27 ./
+drwxr-xr-x 3 root root  4096 Feb  8 16:27 ../
+drwxr-xr-x 8 root root  4096 Feb  8 16:27 .git/
+-rw-r--r-- 1 root root 10393 Feb  8 16:27 README.md
+-rw-r--r-- 1 root root  5272 Feb  8 16:27 main.py
+-rw-r--r-- 1 root root  7057 Feb  8 16:27 mnist_deep.py
+-rw-r--r-- 1 root root  7252 Feb  8 16:27 mnist_deep.py.txt
+root@ryzen:/dockerx/mnist_deep_instrumented# python3 mnist_deep.py
+WARNING:tensorflow:From mnist_deep.py:191: The name tf.app.run is deprecated. Please use tf.compat.v1.app.run instead.
+
+WARNING:tensorflow:From mnist_deep.py:135: read_data_sets (from tensorflow.contrib.learn.python.learn.datasets.mnist) is deprecated and                              will be removed in a future version.
+Instructions for updating:
+Please use alternatives such as official/mnist/dataset.py from tensorflow/models.
+W0208 16:37:13.797948 140165174830848 deprecation.py:323] From mnist_deep.py:135: read_data_sets (from tensorflow.contrib.learn.python.                             learn.datasets.mnist) is deprecated and will be removed in a future version.
+Instructions for updating:
+
+```
 ## main.py Windows 10 Pytorch V 1.0/1.1
 Please see extensive documentation plus video at https://github.com/pytorch/pytorch/issues/20969
