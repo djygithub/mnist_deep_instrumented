@@ -418,7 +418,100 @@ lstopo -v
 ![results](http://davidjyoung.com/cmg/ryzen.lstopov.png)
 ## cuda main.py Ubuntu 20.04 Nvidia Container Pytorch
 Nvidia Container
+```
+david@i77700:~$ docker images
+REPOSITORY                  TAG                                 IMAGE ID       CREATED         SIZE
+nvcr.io/nvidia/tensorflow   19.11-tf1-py3-craydgemm-mnistdeep   64b4bd15d16b   6 days ago      9.61GB
+nvcr.io/nvidia/tensorflow   19.11-tf1-py3-craydgemm             7114ea73994c   6 days ago      9.61GB
+nvcr.io/nvidia/tensorflow   22.01-tf1-py3                       4388f8085466   3 weeks ago     15.1GB
+nvidia/cuda                 10.2-base                           55c80b56bbcd   7 months ago    107MB
+nvcr.io/nvidia/tensorflow   21.04-tf1-py3                       d9d4ebba583c   9 months ago    14GB
+nvidia/cuda                 11.0-base                           2ec708416bb8   17 months ago   122MB
+nvcr.io/nvidia/tensorflow   19.11-tf1-py3                       db057f79b565   2 years ago     8.6GB
+nvcr.io/nvidia/pytorch      19.11-py3                           c97490b12436   2 years ago     9.21GB
+david@i77700:~$
+```
 Test Script
+```
+david@i77700:~$ docker run --gpus all -it --rm  -v /home/david/dockerx:/dockerx nvcr.io/nvidia/pytorch:19.11-py3 
+
+=============
+== PyTorch ==
+=============
+
+NVIDIA Release 19.11 (build 8777600)
+PyTorch Version 1.4.0a0+649135b
+
+Container image Copyright (c) 2019, NVIDIA CORPORATION.  All rights reserved.
+
+Copyright (c) 2014-2019 Facebook Inc.
+Copyright (c) 2011-2014 Idiap Research Institute (Ronan Collobert)
+Copyright (c) 2012-2014 Deepmind Technologies    (Koray Kavukcuoglu)
+Copyright (c) 2011-2012 NEC Laboratories America (Koray Kavukcuoglu)
+Copyright (c) 2011-2013 NYU                      (Clement Farabet)
+Copyright (c) 2006-2010 NEC Laboratories America (Ronan Collobert, Leon Bottou, Iain Melvin, Jason Weston)
+Copyright (c) 2006      Idiap Research Institute (Samy Bengio)
+Copyright (c) 2001-2004 Idiap Research Institute (Ronan Collobert, Samy Bengio, Johnny Mariethoz)
+Copyright (c) 2015      Google Inc.
+Copyright (c) 2015      Yangqing Jia
+Copyright (c) 2013-2016 The Caffe contributors
+All rights reserved.
+
+Various files include modifications (c) NVIDIA CORPORATION.  All rights reserved.
+NVIDIA modifications are covered by the license terms that apply to the underlying project or file.
+
+NOTE: MOFED driver for multi-node communication was not detected.
+      Multi-node communication performance may be reduced.
+
+NOTE: The SHMEM allocation limit is set to the default of 64MB.  This may be
+   insufficient for PyTorch.  NVIDIA recommends the use of the following flags:
+   nvidia-docker run --ipc=host ...
+
+root@01dd2c94a173:/workspace# cd /
+root@01dd2c94a173:/# cd dockerx/
+root@01dd2c94a173:/dockerx# ll
+total 24
+drwxrwxr-x 4 1000 1000 4096 Feb  9 06:36 ./
+drwxr-xr-x 1 root root 4096 Feb  9 10:17 ../
+drwxr-xr-x 3 root root 4096 Feb  9 06:36 data/
+-rw-r--r-- 1 root root 7057 Feb  3 18:02 mnist_deep.py
+drwxr-xr-x 3 root root 4096 Feb  9 06:54 mnist_deep_instrumented/
+root@01dd2c94a173:/dockerx# cd mnist_deep_instrumented/
+root@01dd2c94a173:/dockerx/mnist_deep_instrumented# 
+.
+.
+root@01dd2c94a173:/dockerx/mnist_deep_instrumented# python3 main.py 
+/opt/conda/lib/python3.6/site-packages/torchvision/io/_video_opt.py:17: UserWarning: video reader based on ffmpeg c++ ops not available
+  warnings.warn("video reader based on ffmpeg c++ ops not available")
+Train Epoch: 1 [0/60000 (0%)]	Loss: 2.342917
+Train Epoch: 1 [7680/60000 (13%)]	Loss: 2.301928
+Train Epoch: 1 [15360/60000 (25%)]	Loss: 2.298559
+Train Epoch: 1 [23040/60000 (38%)]	Loss: 2.267058
+Train Epoch: 1 [30720/60000 (51%)]	Loss: 2.255347
+Train Epoch: 1 [38400/60000 (63%)]	Loss: 2.234657
+Train Epoch: 1 [46080/60000 (76%)]	Loss: 2.207634
+Train Epoch: 1 [53760/60000 (89%)]	Loss: 2.168692
+training iterations/second 6781.71
+
+Test set: Average loss: 2.0638, Accuracy: 4701/10000 (47%)
+
+inference images/second 7320.22
+.
+.Train Epoch: 10 [0/60000 (0%)]	Loss: 0.464597
+Train Epoch: 10 [7680/60000 (13%)]	Loss: 0.484195
+Train Epoch: 10 [15360/60000 (25%)]	Loss: 0.534284
+Train Epoch: 10 [23040/60000 (38%)]	Loss: 0.474438
+Train Epoch: 10 [30720/60000 (51%)]	Loss: 0.473903
+Train Epoch: 10 [38400/60000 (63%)]	Loss: 0.493061
+Train Epoch: 10 [46080/60000 (76%)]	Loss: 0.476998
+Train Epoch: 10 [53760/60000 (89%)]	Loss: 0.428223
+training iterations/second 8061.52
+
+Test set: Average loss: 0.2186, Accuracy: 9354/10000 (94%)
+
+inference images/second 7353.14
+root@01dd2c94a173:/dockerx/mnist_deep_instrumented# 
+```
 ![results](http://davidjyoung.com/cmg/pytorch.png)
 Environment
 ```
