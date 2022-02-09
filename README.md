@@ -410,5 +410,254 @@ NUMA node0 CPU(s):     0-15
 Flags:                 fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx                              mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl nonstop_tsc cpuid extd_apicid aperfmperf pni pclmulqdq monitor ssse3 fma c                             x16 sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch                              osvw skinit wdt tce topoext perfctr_core perfctr_nb bpext perfctr_llc mwaitx cpb hw_pstate sme ssbd sev vmmcall fsgsbase bmi1 avx2 smep                              bmi2 rdseed adx smap clflushopt sha_ni xsaveopt xsavec xgetbv1 xsaves clzero irperf xsaveerptr arat npt lbrv svm_lock nrip_save tsc_sc                             ale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold avic v_vmsave_vmload vgif overflow_recov succor smca
 root@ryzen:/dockerx/mnist_deep_instrumented# python3 mnist_deep.py
 ```
+## cuda main.py Ubuntu 20.04 Nvidia Container Pytorch
+Nvidia Container
+Test Script
+![results](http://davidjyoung.com/cmg/pytorch.png)
+Environment
+```
+root@8a3ea7f3c85d:/dockerx/mnist_deep_instrumented# pip list
+Package                       Version            
+----------------------------- -------------------
+absl-py                       0.8.1              
+alabaster                     0.7.12             
+apex                          0.1                
+appdirs                       1.4.3              
+ascii-graph                   1.5.1              
+asn1crypto                    1.2.0              
+atomicwrites                  1.3.0              
+attrs                         19.3.0             
+audioread                     2.1.8              
+Babel                         2.7.0              
+backcall                      0.1.0              
+beautifulsoup4                4.8.1              
+bleach                        3.1.0              
+boto3                         1.10.16            
+botocore                      1.13.16            
+cachetools                    3.1.1              
+certifi                       2019.9.11          
+cffi                          1.13.1             
+chardet                       3.0.4              
+Click                         7.0                
+codecov                       2.0.15             
+conda                         4.7.12             
+conda-build                   3.18.11            
+conda-package-handling        1.6.0              
+coverage                      4.5.4              
+cryptography                  2.8                
+cxxfilt                       0.2.0              
+cycler                        0.10.0             
+cymem                         2.0.2              
+Cython                        0.28.4             
+cytoolz                       0.9.0.1            
+DataProperty                  0.43.1             
+decorator                     4.4.1              
+defusedxml                    0.6.0              
+dill                          0.2.9              
+docutils                      0.15.2             
+entrypoints                   0.3                
+filelock                      3.0.12             
+flake8                        3.7.9              
+Flask                         1.1.1              
+future                        0.18.2             
+glob2                         0.7                
+google-auth                   1.7.0              
+google-auth-oauthlib          0.4.1              
+grpcio                        1.25.0             
+h5py                          2.10.0             
+html2text                     2019.9.26          
+hypothesis                    4.44.0             
+idna                          2.8                
+imageio                       2.6.1              
+imagesize                     1.1.0              
+importlib-metadata            0.23               
+inflect                       3.0.2              
+ipdb                          0.12.2             
+ipykernel                     5.1.3              
+ipython                       7.9.0              
+ipython-genutils              0.2.0              
+itsdangerous                  1.1.0              
+jedi                          0.15.1             
+Jinja2                        2.10.3             
+jmespath                      0.9.4              
+joblib                        0.14.0             
+json5                         0.8.5              
+jsonschema                    3.1.1              
+jupyter-client                5.3.4              
+jupyter-core                  4.6.1              
+jupyter-tensorboard           0.1.10             
+jupyterlab                    1.0.4              
+jupyterlab-server             1.0.6              
+jupytext                      1.2.4              
+kiwisolver                    1.1.0              
+libarchive-c                  2.8                
+librosa                       0.6.3              
+lief                          0.9.0              
+llvmlite                      0.28.0             
+lmdb                          0.98               
+Mako                          1.1.0              
+Markdown                      3.1.1              
+MarkupSafe                    1.1.1              
+maskrcnn-benchmark            0.1                
+matplotlib                    3.1.1              
+mbstrdecoder                  0.8.1              
+mccabe                        0.6.1              
+mistune                       0.8.4              
+mlperf-compliance             0.0.10             
+mock                          3.0.5              
+more-itertools                7.2.0              
+msgfy                         0.0.7              
+msgpack                       0.6.1              
+msgpack-numpy                 0.4.3.2            
+murmurhash                    1.0.2              
+nbconvert                     5.6.1              
+nbformat                      4.4.0              
+networkx                      2.0                
+nltk                          3.4.5              
+notebook                      6.0.2              
+numba                         0.43.1             
+numpy                         1.17.3             
+nvidia-dali                   0.15.0             
+oauthlib                      3.1.0              
+onnx                          1.6.0              
+opencv-python                 3.4.1.15           
+packaging                     19.2               
+pandas                        0.24.2             
+pandocfilters                 1.4.2              
+parso                         0.5.1              
+pathvalidate                  0.29.0             
+pexpect                       4.7.0              
+pickleshare                   0.7.5              
+Pillow-SIMD                   5.3.0.post1        
+pip                           18.0               
+pkginfo                       1.5.0.1            
+plac                          0.9.6              
+pluggy                        0.13.0             
+preshed                       2.0.1              
+progressbar                   2.5                
+prometheus-client             0.7.1              
+prompt-toolkit                2.0.10             
+protobuf                      3.10.0             
+psutil                        5.6.3              
+ptyprocess                    0.6.0              
+py                            1.8.0              
+pyasn1                        0.4.7              
+pyasn1-modules                0.2.7              
+pybind11                      2.4.3              
+pycocotools                   2.0+nv0.3.1        
+pycodestyle                   2.5.0              
+pycosat                       0.6.3              
+pycparser                     2.19               
+pycuda                        2019.1.2           
+pydot                         1.4.1              
+pyflakes                      2.1.1              
+Pygments                      2.4.2              
+pyOpenSSL                     19.0.0             
+pyparsing                     2.4.5              
+pyrsistent                    0.15.5             
+PySocks                       1.7.1              
+pytablewriter                 0.46.1             
+pytest                        5.2.2              
+pytest-cov                    2.8.1              
+pytest-pythonpath             0.7.3              
+python-dateutil               2.8.0              
+python-hostlist               1.18               
+python-nvd3                   0.15.0             
+python-slugify                4.0.0              
+pytools                       2019.1.1           
+pytorch-transformers          1.1.0              
+pytz                          2019.3             
+PyWavelets                    1.1.1              
+PyYAML                        5.1.2              
+pyzmq                         18.1.0             
+regex                         2018.1.10          
+requests                      2.22.0             
+requests-oauthlib             1.3.0              
+resampy                       0.2.2              
+revtok                        0.0.3              
+rsa                           4.0                
+ruamel-yaml                   0.15.46            
+s3transfer                    0.2.1              
+sacrebleu                     1.2.10             
+sacremoses                    0.0.35             
+scikit-image                  0.15.0             
+scikit-learn                  0.21.3             
+scipy                         1.3.1              
+Send2Trash                    1.5.0              
+sentencepiece                 0.1.83             
+setuptools                    41.6.0.post20191030
+six                           1.12.0             
+snowballstemmer               2.0.0              
+SoundFile                     0.10.2             
+soupsieve                     1.9.3              
+sox                           1.3.7              
+spacy                         2.0.16             
+Sphinx                        2.2.1              
+sphinx-rtd-theme              0.4.3              
+sphinxcontrib-applehelp       1.0.1              
+sphinxcontrib-devhelp         1.0.1              
+sphinxcontrib-htmlhelp        1.0.2              
+sphinxcontrib-jsmath          1.0.1              
+sphinxcontrib-qthelp          1.0.2              
+sphinxcontrib-serializinghtml 1.1.3              
+SSD                           0.1                
+subword-nmt                   0.3.3              
+tabledata                     0.9.1              
+tabulate                      0.8.5              
+tensorboard                   2.0.1              
+tensorrt                      6.0.1.8            
+terminado                     0.8.2              
+testpath                      0.4.4              
+text-unidecode                1.3                
+thinc                         6.12.1             
+toml                          0.10.0             
+toolz                         0.10.0             
+torch                         1.4.0a0+649135b    
+torchtext                     0.4.0              
+torchvision                   0.5.0a0            
+tornado                       6.0.3              
+tqdm                          4.31.1             
+traitlets                     4.3.3              
+typepy                        0.6.0              
+typing                        3.7.4.1            
+typing-extensions             3.7.4.1            
+ujson                         1.35               
+Unidecode                     1.1.1              
+urllib3                       1.24.2             
+wcwidth                       0.1.7              
+webencodings                  0.5.1              
+Werkzeug                      0.16.0             
+wheel                         0.33.6             
+wrapt                         1.10.11            
+yacs                          0.1.6              
+zipp                          0.6.0              
+root@8a3ea7f3c85d:/dockerx/mnist_deep_instrumented# lscpu
+Architecture:        x86_64
+CPU op-mode(s):      32-bit, 64-bit
+Byte Order:          Little Endian
+CPU(s):              8
+On-line CPU(s) list: 0-7
+Thread(s) per core:  2
+Core(s) per socket:  4
+Socket(s):           1
+NUMA node(s):        1
+Vendor ID:           GenuineIntel
+CPU family:          6
+Model:               158
+Model name:          Intel(R) Core(TM) i7-7700 CPU @ 3.60GHz
+Stepping:            9
+CPU MHz:             900.036
+CPU max MHz:         3600.0000
+CPU min MHz:         800.0000
+BogoMIPS:            7200.00
+Virtualization:      VT-x
+L1d cache:           32K
+L1i cache:           32K
+L2 cache:            256K
+L3 cache:            8192K
+NUMA node0 CPU(s):   0-7
+Flags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb invpcid_single pti ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm arat pln pts hwp hwp_notify hwp_act_window hwp_epp md_clear flush_l1d
+root@8a3ea7f3c85d:/dockerx/mnist_deep_instrumented# 
+```
 ## main.py Windows 10 Pytorch V 1.0/1.1
 Please see extensive documentation plus video at https://github.com/pytorch/pytorch/issues/20969
