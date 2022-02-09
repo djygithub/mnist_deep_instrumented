@@ -202,6 +202,9 @@ WARNING: You are using pip version 19.3.1; however, version 21.3.1 is available.
 You should consider upgrading via the 'pip install --upgrade pip' command.
 root@10c34477cc47:/workspace/github/djytf# 
 ```
+lstopo -v
+
+![results](http://davidjyoung.com/cmg/i77700.lstopov.png)
 ## rocm mnist_deep.py Ubuntu 20.04 Rocm Container Tensorflow v 1.15
 ```login as: david
      +--------------------------------------------------------------------+
@@ -410,6 +413,9 @@ NUMA node0 CPU(s):     0-15
 Flags:                 fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx                              mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl nonstop_tsc cpuid extd_apicid aperfmperf pni pclmulqdq monitor ssse3 fma c                             x16 sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch                              osvw skinit wdt tce topoext perfctr_core perfctr_nb bpext perfctr_llc mwaitx cpb hw_pstate sme ssbd sev vmmcall fsgsbase bmi1 avx2 smep                              bmi2 rdseed adx smap clflushopt sha_ni xsaveopt xsavec xgetbv1 xsaves clzero irperf xsaveerptr arat npt lbrv svm_lock nrip_save tsc_sc                             ale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold avic v_vmsave_vmload vgif overflow_recov succor smca
 root@ryzen:/dockerx/mnist_deep_instrumented# python3 mnist_deep.py
 ```
+lstopo -v
+
+![results](http://davidjyoung.com/cmg/ryzen.lstopov.png)
 ## cuda main.py Ubuntu 20.04 Nvidia Container Pytorch
 Nvidia Container
 Test Script
