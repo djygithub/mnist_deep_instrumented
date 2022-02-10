@@ -761,6 +761,7 @@ Flags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cm
 root@8a3ea7f3c85d:/dockerx/mnist_deep_instrumented# 
 ```
 ## rocm main.py Ubuntu 20.04 container
+Special thanks and kudos to Justin for this most excellent container, BRAVO! https://github.com/jrcichra/rocm-pytorch-gfx803
 ```
 david@ryzen:~$ sudo docker run -it -v $PWD:/projects --privileged --name pytorch --device=/dev/kfd --device=/dev/dri --group-add video jrcichra/rocm-pytorch-gfx803
 Unable to find image 'jrcichra/rocm-pytorch-gfx803:latest' locally
