@@ -760,5 +760,117 @@ NUMA node0 CPU(s):   0-7
 Flags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb invpcid_single pti ssbd ibrs ibpb stibp tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm arat pln pts hwp hwp_notify hwp_act_window hwp_epp md_clear flush_l1d
 root@8a3ea7f3c85d:/dockerx/mnist_deep_instrumented# 
 ```
+## rocm main.py Ubuntu 20.04 container
+```
+david@ryzen:~$ sudo docker run -it -v $PWD:/projects --privileged --name pytorch --device=/dev/kfd --device=/dev/dri --group-add video jrcichra/rocm-pytorch-gfx803
+Unable to find image 'jrcichra/rocm-pytorch-gfx803:latest' locally
+latest: Pulling from jrcichra/rocm-pytorch-gfx803
+.
+.
+Status: Downloaded newer image for jrcichra/rocm-pytorch-gfx803:latest
+root@eb85b315bb16:/var/lib/jenkins/pytorch# pwd
+/var/lib/jenkins/pytorch
+root@eb85b315bb16:/var/lib/jenkins/pytorch# 
+```
+Test Script
+```
+root@eb85b315bb16:/projects/dockerx/examples/mnist# python main.py
+Downloading http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz to ../data/MNIST/raw/train-images-idx3-ubyte.gz
+ 98%|¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦? | 9756672/9912422 [00:03<00:00, 10859604.16it/s]Extracting ../data/MNIST/raw/train-images-idx3-ubyte.gz to ../data/MNIST/raw
+Downloading http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz to ../data/MNIST/raw/train-labels-idx1-ubyte.gz
+                                                                                                                                      Extracting ../data/MNIST/raw/train-labels-idx1-ubyte.gz to ../data/MNIST/raw                                  | 0/28881 [00:01<?, ?it/s]
+Downloading http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz to ../data/MNIST/raw/t10k-images-idx3-ubyte.gz
+                                                                                                                                      Extracting ../data/MNIST/raw/t10k-images-idx3-ubyte.gz to ../data/MNIST/raw
+Downloading http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz to ../data/MNIST/raw/t10k-labels-idx1-ubyte.gz0, 9369052.80it/s]
+                                                                                                                                      Extracting ../data/MNIST/raw/t10k-labels-idx1-ubyte.gz to ../data/MNIST/raw
+Processing...
+/
+.
+.
+.
+Train Epoch: 10 [58240/60000 (97%)]     Loss: 0.383576
+Train Epoch: 10 [58880/60000 (98%)]     Loss: 0.581976
+Train Epoch: 10 [59520/60000 (99%)]     Loss: 0.464062
+9920512it [03:15, 50618.83it/s]
+
+Test set: Average loss: 0.1910, Accuracy: 9469/10000 (95%)
+.
+.
+```
+Environment
+```
+root@eb85b315bb16:/projects/dockerx/mnist_deep_instrumented# pip list
+Package                Version
+---------------------- -------------------
+apex                   0.1
+appdirs                1.4.4
+attrs                  20.2.0
+audioread              2.1.9
+brotlipy               0.7.0
+certifi                2020.6.20
+cffi                   1.14.3
+chardet                3.0.4
+conda                  4.9.1
+conda-package-handling 1.7.2
+cryptography           3.1.1
+cycler                 0.10.0
+dataclasses            0.7
+decorator              4.4.2
+future                 0.18.2
+idna                   2.10
+imageio                2.9.0
+importlib-metadata     2.0.0
+iniconfig              1.1.1
+joblib                 0.17.0
+kiwisolver             1.3.0
+librosa                0.8.0
+llvmlite               0.30.0
+matplotlib             3.3.2
+mkl-fft                1.2.0
+mkl-random             1.1.1
+mkl-service            2.3.0
+networkx               2.5
+numba                  0.46.0
+numpy                  1.18.5
+packaging              20.4
+Pillow                 8.0.1
+pip                    20.2.4
+pluggy                 0.13.1
+pooch                  1.2.0
+psutil                 5.7.3
+py                     1.9.0
+pycosat                0.6.3
+pycparser              2.20
+pyOpenSSL              19.1.0
+pyparsing              2.4.7
+PySocks                1.7.1
+pytest                 6.1.2
+python-dateutil        2.8.1
+PyWavelets             1.1.1
+PyYAML                 5.3.1
+requests               2.24.0
+resampy                0.2.2
+ruamel-yaml            0.15.87
+scikit-image           0.17.2
+scikit-learn           0.20.3
+scipy                  1.1.0
+setuptools             50.3.0.post20201006
+six                    1.15.0
+SoundFile              0.10.3.post1
+tifffile               2020.9.3
+toml                   0.10.1
+torch                  1.7.0a0
+torchvision            0.9.0a0+1fe1e11
+tqdm                   4.50.2
+typing-extensions      3.7.4.3
+urllib3                1.25.11
+wheel                  0.35.1
+zipp                   3.4.0
+root@eb85b315bb16:/projects/dockerx/mnist_deep_instrumented# dpkg -l | grep rocm-dev
+ii  rocm-dev                       3.9.0.30900-17                             amd64        Radeon Open Compute (ROCm) Runtime software stack
+ii  rocm-device-libs               1.0.0.637-rocm-rel-3.9-17-db8c0c3          amd64        Radeon Open Compute - device libraries
+root@eb85b315bb16:/projects/dockerx/mnist_deep_instrumented#
+
+```
 ## cuda main.py Windows 10 Pytorch V 1.0/1.1
 Please see extensive documentation plus video at https://github.com/pytorch/pytorch/issues/20969
