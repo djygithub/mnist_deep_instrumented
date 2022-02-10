@@ -387,6 +387,12 @@ wrapt                1.11.2
 zipp                 0.6.0
 WARNING: You are using pip version 19.3.1; however, version 20.3.4 is available.
 You should consider upgrading via the 'pip install --upgrade pip' command.
+david@ryzen:~$ drun djydockerhub/lammpsiccavx2:20200521
+root@ryzen:/root# dpkg -l | grep rocm-dev
+ii  rocm-dev                               3.0.6                                 amd64        Radeon Open Compute (ROCm) Runtime software stack
+ii  rocm-device-libs                       1.0.0.559-rocm-rel-3.0-6-628eea4      amd64        Radeon Open Compute - device libraries
+root@ryzen:/root#
+
 root@ryzen:/dockerx/mnist_deep_instrumented# lscpu
 Architecture:          x86_64
 CPU op-mode(s):        32-bit, 64-bit
