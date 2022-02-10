@@ -1,5 +1,7 @@
 # mnist_deep_instrumented http://davidjyoung.com/cmg/nvidiagpuperf.pdf
 Classic mnist_deep.py with training iterations per second and inference images per second.  Tensorflow (mnist_deep.py) and Pytorch (main.py) versions included.
+
+![results](http://davidjyoung.com/cmg/mnist.numbers.png)
 ## cuda mnist_deep.py Ubuntu 20.04 Nvidia Container Tensorflow v 1.15
 One way to test is with an Nvidia Container.
 ```
