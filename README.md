@@ -3,8 +3,9 @@ Classic mnist_deep.py with training iterations per second and inference images p
 
 ![results](http://davidjyoung.com/cmg/mnist.numbers2.jpg)
   
-cuda mnist_deep.py  https://github.com/djygithub/mnist_deep_instrumented/blob/main/README.md#cuda-mnist_deeppy<br/>
-cuda main.py https://github.com/djygithub/mnist_deep_instrumented#rocm-mnist_deeppy<br/>
+#### cuda mnist_deep.py https://github.com/djygithub/mnist_deep_instrumented#cuda-mnist_deeppy <br/>
+rocm mnist_deep.py https://github.com/djygithub/mnist_deep_instrumented#rocm-mnist_deeppy<br/>
+
 ## cuda mnist_deep.py
 Ubuntu 20.04 Nvidia Container Tensorflow v 1.15.
 One way to test is with an Nvidia Container.
