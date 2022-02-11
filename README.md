@@ -781,7 +781,7 @@ root@eb85b315bb16:/var/lib/jenkins/pytorch#
 ```
 Test Script
 ```
-root@eb85b315bb16:/projects/dockerx/examples/mnist# python main.py
+root@eb85b315bb16:/projects/dockerx/examples/mnist# python main.py --batch-size 512
 Downloading http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz to ../data/MNIST/raw/train-images-idx3-ubyte.gz
  98%|¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦? | 9756672/9912422 [00:03<00:00, 10859604.16it/s]Extracting ../data/MNIST/raw/train-images-idx3-ubyte.gz to ../data/MNIST/raw
 Downloading http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz to ../data/MNIST/raw/train-labels-idx1-ubyte.gz
