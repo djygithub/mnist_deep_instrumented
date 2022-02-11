@@ -791,18 +791,25 @@ Downloading http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz to ../dat
 Downloading http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz to ../data/MNIST/raw/t10k-labels-idx1-ubyte.gz0, 9369052.80it/s]
                                                                                                                                       Extracting ../data/MNIST/raw/t10k-labels-idx1-ubyte.gz to ../data/MNIST/raw
 Processing...
-/
-.
-.
-.
-Train Epoch: 10 [58240/60000 (97%)]     Loss: 0.383576
-Train Epoch: 10 [58880/60000 (98%)]     Loss: 0.581976
-Train Epoch: 10 [59520/60000 (99%)]     Loss: 0.464062
-9920512it [03:15, 50618.83it/s]
+Train Epoch: 10 [0/60000 (0%)]  Loss: 0.093201
+Train Epoch: 10 [5120/60000 (8%)]       Loss: 0.056653
+Train Epoch: 10 [10240/60000 (17%)]     Loss: 0.055410
+Train Epoch: 10 [15360/60000 (25%)]     Loss: 0.053471
+Train Epoch: 10 [20480/60000 (34%)]     Loss: 0.108927
+Train Epoch: 10 [25600/60000 (42%)]     Loss: 0.090114
+Train Epoch: 10 [30720/60000 (51%)]     Loss: 0.049455
+Train Epoch: 10 [35840/60000 (59%)]     Loss: 0.057172
+Train Epoch: 10 [40960/60000 (68%)]     Loss: 0.067048
+Train Epoch: 10 [46080/60000 (76%)]     Loss: 0.067830
+Train Epoch: 10 [51200/60000 (85%)]     Loss: 0.047784
+Train Epoch: 10 [56320/60000 (93%)]     Loss: 0.084446
+training iterations/second 6058.58
 
-Test set: Average loss: 0.1910, Accuracy: 9469/10000 (95%)
-.
-.
+Test set: Average loss: 0.0416, Accuracy: 9863/10000 (99%)
+
+inference images/second 6111.66
+root@93810d637ea4:/projects#
+
 ```
 Environment
 ```
