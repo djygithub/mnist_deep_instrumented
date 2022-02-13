@@ -216,6 +216,7 @@ lstopo -v
 
 ![results](http://davidjyoung.com/cmg/i77700.lstopov.png)
 ## rocm mnist_deep.py
+http://davidjyoung.com/movies/ryzenradeontoptfmnist/<br/>
 Ubuntu 20.04 Rocm Container Tensorflow v 1.15
 ```login as: david
      +--------------------------------------------------------------------+
@@ -777,7 +778,8 @@ Flags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cm
 root@8a3ea7f3c85d:/dockerx/mnist_deep_instrumented# 
 ```
 ## rocm main.py
-Ubuntu 20.04 container torch 1.7.0a0
+http://davidjyoung.com/movies/ryzenradeontoppytorchmnist/<br/>
+Ubuntu 20.04 container torch 1.7.0a0<br/>
 Special thanks and kudos to Justin for this most excellent container, BRAVO! https://github.com/jrcichra/rocm-pytorch-gfx803
 ```
 david@ryzen:~$ sudo docker run -it -v $PWD:/projects --privileged --name pytorch --device=/dev/kfd --device=/dev/dri --group-add video jrcichra/rocm-pytorch-gfx803
