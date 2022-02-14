@@ -1,7 +1,7 @@
 # mnist_deep_instrumented http://davidjyoung.com/cmg/nvidiagpuperf.pdf
 Classic mnist_deep.py with training iterations per second and inference images per second.  Tensorflow (mnist_deep.py) and Pytorch (main.py) versions included.
 
-![results](http://davidjyoung.com/cmg/mnist.numbers2.jpg)
+![results](http://davidjyoung.com/cmg/mnist.numbers3.jpg)
   
 **cuda mnist_deep.py** https://github.com/djygithub/mnist_deep_instrumented#cuda-mnist_deeppy<br/>
 **rocm mnist_deep.py** https://github.com/djygithub/mnist_deep_instrumented#rocm-mnist_deeppy<br/>
